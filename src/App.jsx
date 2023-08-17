@@ -1,23 +1,29 @@
 import { BrowserRouter } from "react-router-dom";
 import {About, Contact, Experience, Feedbacks, Hero, Navbar,
-Tech, Works, StarsCanvas} from './components';
+Tech, Works, StarsCanvas, ParallaxWebsite, Project} from './components/index.js';
+
+import Spline from '@splinetool/react-spline';
+
 const App = () => {
 
   return (
     <BrowserRouter>
-    <div className="relative z-0 bg-primary">
-      <div className="bg-hero-pattern bg-cover
-      bg-no-repeat bg-center">
-        <Navbar />
-        <Hero />
-      </div>
+    <div >
+      <ParallaxWebsite/>
     </div>
+    <div className="relative z-0 bg-primary">
+    <Project/>
     <About />
-    <Experience />
-    <Tech />
     <Works />
-    <Feedbacks />
+
+    {/* <Experience />
+    <Tech />
+    <Feedbacks /> */}
+    <Contact />
+    </div>
+
     </BrowserRouter>
+  
   )
 }
 
