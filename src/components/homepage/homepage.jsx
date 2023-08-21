@@ -3,9 +3,7 @@ import styles from './style.module.css'; // Import your CSS file here
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styled from 'styled-components'
-import Project from '../project/index.js'; 
-import { SectionWrapper } from "../../hoc";
-
+import logo from '../../../src/assets/logo-color.svg'
 
 import logoImg from './img/logo.png';
 import backgroundImg from './img/background.png';
@@ -141,7 +139,7 @@ const ParallaxWebsite = () => {
       <body className={styles.body}>
         <header className={`${styles.hide} ${styles.header}`}  ref={el => navbarRef = el}>
           <nav className={styles.nav}>
-            <img src={logoImg} alt="Travelo" className={styles.logo} />
+            <img src={logo} alt="Travelo" className={styles.logo} />
             <ul className={styles.ul}>
               <li>
                 <a className={styles.a} href="#project">Projects</a>
