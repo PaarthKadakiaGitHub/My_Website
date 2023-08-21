@@ -40,6 +40,37 @@
     display: inline-block;
 }
 
+.container .card .image2{
+    position: absolute;
+    z-index: 999;
+    top: -120px;
+    right: -120px;
+    text-align: right;
+
+
+    /* border: double 4px transparent;
+    border-radius: 80px;
+    background-image: linear-gradient(white, white), radial-gradient(circle at top left, #66FF99, #cc0066);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    position: absolute;  */
+
+
+    scale: 0.2;
+
+    border-radius: 10px;
+}
+.container .card .circle{
+    position: absolute;
+    z-index: 998;
+    height: 70px;
+    width: 70px;
+    top: 9.5%;
+    right: 12%;
+    background-color: #000;
+    border-radius: 50%;
+
+}
 .container .card .image{
     border: 2px solid white; 
 

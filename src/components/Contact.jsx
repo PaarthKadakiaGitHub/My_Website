@@ -6,7 +6,9 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+// public key 
 
+// 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -33,16 +35,16 @@ const Contact = () => {
 
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        'service_29uzio2',
+        'template_byz7l49',
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Paarth Kadakia",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "paarth.kadakia24@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        'iraNkQr8t77CXcN_y'
       )
       .then(
         () => {
@@ -73,7 +75,7 @@ const Contact = () => {
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <h3 className={styles.sectionHeadText} id='contact'>Contact.</h3>
 
         <form
           ref={formRef}
@@ -87,7 +89,7 @@ const Contact = () => {
               name='name'
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="What's your name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
