@@ -1,4 +1,4 @@
-import React , {useEffect, useRef, Component} from 'react';
+import React , {useLayoutEffect, useEffect, useRef, Component} from 'react';
 import styles from './style.module.css'; // Import your CSS file here
 import { gsap } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -38,7 +38,6 @@ const Pmain = styled.main`
 
 
 const ParallaxWebsite = () => {
-  gsap.registerPlugin(ScrollTrigger);
   let backgroundRef = useRef();
   let fog7Ref = useRef();
   let mountain10Ref = useRef();
@@ -69,9 +68,9 @@ const ParallaxWebsite = () => {
 
   // let f = 0
   
-  useEffect(() => {
+  useLayoutEffect(() => {
   let ctx =  gsap.context(() => {
-      gsap.from(backgroundRef, {top: 600, duration: 3.5, ease: 'power3.out'})
+      gsap.from(backgroundRef, {top: 400, duration: 3.5, ease: 'power3.out'})
       gsap.from(fog7Ref, {top: 1000, duration: 3.5, ease: 'power3.out'})
       gsap.from(mountain10Ref, {top: 1100, duration: 3.5, ease: 'power3.out'})
       gsap.from(fog6Ref, {top: 1400, duration: 3.5, ease: 'power3.out'})
@@ -96,6 +95,8 @@ const ParallaxWebsite = () => {
       gsap.from(blackRef, {opacity:0, duration: 3.5, ease: 'power3.out', delay: 2})
 
     }, styles.parallax);
+    console.log(backgroundRef.offsetHeight)
+
     gsap.to('about', {
       ScrollTrigger:{
         snap: 'about'}

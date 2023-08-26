@@ -62,7 +62,6 @@ class Project extends Component {
       }
     ]}];
     const tags = [['ye', 'ya', 'yo'], ['ho', 'ha' ,'hi'], ['ka', 'ki', 'ko']]
-    console.log(tags[1][0])
     return (
       <body className={projectStyles.body}>
         <div >
