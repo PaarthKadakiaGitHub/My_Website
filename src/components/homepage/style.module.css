@@ -107,6 +107,7 @@
 }
 .bg-img{
     width: 2800px;
+    height: 804px;
     top: calc(50% - 390px);
     left: calc(50%  + 10px);
     z-index: 0;
