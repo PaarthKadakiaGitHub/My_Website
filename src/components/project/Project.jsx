@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import projectStyles from './Project.module.css';
 import styled from 'styled-components'
-import { SectionWrapper1 } from "../../hoc";
 
 import bugtracker from './bugtracker.png'
 import django from './django.png'

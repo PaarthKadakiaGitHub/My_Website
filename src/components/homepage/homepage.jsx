@@ -1,32 +1,10 @@
-import React , {useLayoutEffect, useEffect, useRef, Component} from 'react';
-import styles from './style.module.css'; // Import your CSS file here
 import { gsap } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import styled from 'styled-components'
-import logo from '../../../src/assets/logo-color.svg'
+import React, { useLayoutEffect, useRef } from 'react';
+import styled from 'styled-components';
+import logo from '../../../src/assets/logo-color.svg';
+import styles from './style.module.css'; // Import your CSS file here
 
-import logoImg from './img/logo.png';
-import backgroundImg from './img/background.png';
-import fog7Img from './img/fog_7.png';
-import mountain10Img from './img/mountain_10.png';
-import mountain9Img from './img/mountain_9.png'
-import fog6Img from './img/fog_6.png';
-import mountain8Img from './img/mountain_8.png';
-import fog5Img from './img/fog_5.png';
-import mountain7Img from './img/mountain_7.png';
-import mountain6Img from './img/mountain_6.png';
-import fog4Img from './img/fog_4.png';
-import mountain5Img from './img/mountain_5.png';
-import fog3Img from './img/fog_3.png';
-import mountain4Img from './img/mountain_4.png';
-import mountain3Img from './img/mountain_3.png';
-import fog2Img from './img/fog_2.png';
-import mountain2Img from './img/mountain_2.png';
-import mountain1Img from './img/mountain_1.png';
-import sunRaysImg from './img/sun_rays.png';
-import blackShadowImg from './img/black_shadow.png';
-import fog1Img from './img/fog_1.png';
-
+import bg from './img/bg2.mp4';
 
 const Pmain = styled.main`
   position: relative;
@@ -58,6 +36,7 @@ const ParallaxWebsite = () => {
   let mountain1Ref = useRef();
   let fog1Ref = useRef();
   let navbarRef = useRef();
+  let shadowRef = useRef();
   let h1Ref = useRef();
   let h2Ref = useRef();
   let sunrayRef = useRef();
@@ -70,29 +49,31 @@ const ParallaxWebsite = () => {
   
   useLayoutEffect(() => {
   let ctx =  gsap.context(() => {
-      gsap.from(backgroundRef, {top: 400, duration: 3.5, ease: 'power3.out'})
-      gsap.from(fog7Ref, {top: 1000, duration: 3.5, ease: 'power3.out'})
-      gsap.from(mountain10Ref, {top: 1100, duration: 3.5, ease: 'power3.out'})
-      gsap.from(fog6Ref, {top: 1400, duration: 3.5, ease: 'power3.out'})
-      gsap.from(mountain9Ref, {top: 1700, duration: 3.5, ease: 'power3.out'})
-      gsap.from(mountain8Ref, {top: 1800, duration: 3.5, ease: 'power3.out'})
-      gsap.from(fog5Ref, {top: 1900, duration: 3.5, ease: 'power3.out'})
-      gsap.from(mountain7Ref, {top: 2000, duration: 3.5, ease: 'power3.out'})
-      gsap.from(mountain6Ref, {top: 2300, duration: 3.5, ease: 'power3.out'})
-      gsap.from(fog4Ref, {top: 2400, duration: 3.5, ease: 'power3.out'})
-      gsap.from(mountain5Ref, {top: 2550, duration: 3.5, ease: 'power3.out'})
-      gsap.from(fog3Ref, {top: 2800, duration: 3.5, ease: 'power3.out'})
-      gsap.from(mountain4Ref, {top: 3200, duration: 3.5, ease: 'power3.out'})
-      gsap.from(mountain3Ref, {top: 3400, duration: 3.5, ease: 'power3.out'})
-      gsap.from(fog2Ref, {top: 3600, duration: 3.5, ease: 'power3.out'})
-      gsap.from(mountain2Ref, {top: 3800, duration: 3.5, ease: 'power3.out'})
-      gsap.from(mountain1Ref, {top: 4000, duration: 3.5, ease: 'power3.out'})
-      gsap.from(fog1Ref, {top: 4200, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(backgroundRef, {top: 400, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(fog7Ref, {top: 1000, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(mountain10Ref, {top: 1100, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(fog6Ref, {top: 1400, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(mountain9Ref, {top: 1700, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(mountain8Ref, {top: 1800, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(fog5Ref, {top: 1900, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(mountain7Ref, {top: 2000, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(mountain6Ref, {top: 2300, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(fog4Ref, {top: 2400, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(mountain5Ref, {top: 2550, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(fog3Ref, {top: 2800, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(mountain4Ref, {top: 3200, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(mountain3Ref, {top: 3400, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(fog2Ref, {top: 3600, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(mountain2Ref, {top: 3800, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(mountain1Ref, {top: 4000, duration: 3.5, ease: 'power3.out'})
+      // gsap.from(fog1Ref, {top: 4200, duration: 3.5, ease: 'power3.out'})
       gsap.from(navbarRef, {opacity:0, duration: 3.5, ease: 'power3.out', delay: 2})
-      gsap.from(h1Ref, {y: 100, opacity:0, duration: 1.5, ease: 'power3.out', delay: 2})
-      gsap.from(h2Ref, {y: -100, opacity:0, duration: 1.5, ease: 'power3.out', delay: 2})
-      gsap.from(sunrayRef, {opacity:0, duration: 3.5, ease: 'power3.out', delay: 2})
-      gsap.from(blackRef, {opacity:0, duration: 3.5, ease: 'power3.out', delay: 2})
+      gsap.from(shadowRef, {opacity:0, duration: 3.5, ease: 'power3.out', delay: 2})
+
+      // gsap.from(h1Ref, {y: 100, opacity:0, duration: 1.5, ease: 'power3.out', delay: 2})
+      // gsap.from(h2Ref, {y: -100, opacity:0, duration: 1.5, ease: 'power3.out', delay: 2})
+      // gsap.from(sunrayRef, {opacity:0, duration: 3.5, ease: 'power3.out', delay: 2})
+      // gsap.from(blackRef, {opacity:0, duration: 3.5, ease: 'power3.out', delay: 2})
 
     }, styles.parallax);
     console.log(backgroundRef.offsetHeight)
@@ -157,16 +138,14 @@ const ParallaxWebsite = () => {
         </header>
 
   <Pmain >
-      <div className={styles.shadow}></div>
-          <img src={backgroundImg} className={`${styles.parallax} ${styles['bg-img']}`} ref={el => backgroundRef = el}/>
+  <video className={styles.video} src={bg} autoPlay muted ></video>
+
+      <div className={styles.shadow} ref={el => shadowRef = el}></div>
+          {/* <img src={backgroundImg} className={`${styles.parallax} ${styles['bg-img']}`} ref={el => backgroundRef = el}/>
           <img src={fog7Img} className={`${styles.parallax} ${styles['fog-7']}` } ref={el => fog7Ref = el} />
           <img src={mountain10Img} className={`${styles.parallax} ${styles['mountain-10']}`}  ref={el => mountain10Ref = el}/>
           <img src={fog6Img} className={`${styles.parallax} ${styles['fog-6']}`} ref={el => fog6Ref = el} />
-          {/* ...other image elements */}
-          {/* <img src={require('./img/background.png')} className="parallax bg-img" data-distance="-75" />
-          <img src={require('./img/fog_7.png')} className="parallax fog-7" data-distance="850" />
-          <img src={require('./img/mountain_10.png')} className="parallax mountain-10" data-distance="1100" />
-          <img src={require('./img/fog_6.png')} className="parallax fog-6" data-distance="1400" /> */}
+         
           <div>
             <img
               src={mountain9Img}
@@ -195,19 +174,7 @@ const ParallaxWebsite = () => {
               <h1 className={styles.h1} ref={el => h1Ref = el}>Portfolio</h1>
             </div>
           </div>
-          {/* <img src={require('./img/mountain_6.png')} className="parallax mountain-6" data-distance="2300" />
-          <img src={require('./img/fog_4.png')} className="parallax fog-4" data-distance="2400" />
-          <img src={require('./img/mountain_5.png')} className="parallax mountain-5" data-distance="2550" />
-          <img src={require('./img/fog_3.png')} className="parallax fog-3" data-distance="2800" />
-          <img src={require('./img/mountain_4.png')} className="parallax mountain-4" data-distance="3200" />
-          <img src={require('./img/mountain_3.png')} className="parallax mountain-3" data-distance="3400" />
-          <img src={require('./img/fog_2.png')} className="parallax fog-2" data-distance="3600" />
-          <img src={require('./img/mountain_2.png')} className="parallax mountain-2" data-distance="3800" />
-          <img src={require('./img/mountain_1.png')} className="parallax mountain-1" data-distance="4000" />
-          <img src={require('./img/sun_rays.png')} className="sun-rays hide" />
-          <img src={require('./img/black_shadow.png')} className="black-shadow hide" />
-          <img src={require('./img/fog_1.png')} className="parallax fog-1" data-distance="4200" /> */}
-          
+        
       <img src={mountain6Img} className={`${styles.parallax} ${styles['mountain-6']}`}  ref={el => mountain6Ref = el}/>
       <img src={fog4Img} className={`${styles.parallax} ${styles['fog-4']}`} ref={el => fog4Ref = el} />
       <img src={mountain5Img} className={`${styles.parallax} ${styles['mountain-5']}`} ref={el => mountain5Ref = el} />
@@ -220,7 +187,7 @@ const ParallaxWebsite = () => {
       <img src={sunRaysImg} className={`${styles['sun-rays']} ${styles.hide}`}  ref={el => sunrayRef = el}/>
       <img src={blackShadowImg} className={`${styles['black-shadow']} ${styles.hide}`}  ref={el => blackRef = el}/>
       <img src={fog1Img} className={`${styles.parallax} ${styles['fog-1']}`} ref={el => fog1Ref = el} />
-    
+     */}
 
         </Pmain>
 

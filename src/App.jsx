@@ -11,7 +11,6 @@ const App = () => {
       <ParallaxWebsite/>
     </div>
     <div className="relative z-0 bg-primary">
-    <StarsCanvas/>
     <Project/>
     <About />
 
