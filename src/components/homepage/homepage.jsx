@@ -2,7 +2,7 @@ import { gsap } from 'gsap';
 import React, { useLayoutEffect, useRef } from 'react';
 import styled from 'styled-components';
 import logo from '../../../src/assets/logo-color.svg';
-import styles from './style.module.css'; // Import your CSS file here
+import styles from './style.module.css'; 
 
 import bg from './img/bg2.mp4';
 
@@ -16,31 +16,32 @@ const Pmain = styled.main`
 
 
 const ParallaxWebsite = () => {
-  let backgroundRef = useRef();
-  let fog7Ref = useRef();
-  let mountain10Ref = useRef();
-  let fog6Ref = useRef();
+  // let backgroundRef = useRef();
+  // let fog7Ref = useRef();
+  // let mountain10Ref = useRef();
+  // let fog6Ref = useRef();
 
-  let mountain9Ref = useRef();
-  let mountain8Ref = useRef();
-  let fog5Ref = useRef();
-  let mountain7Ref = useRef();
-  let mountain6Ref = useRef();
-  let fog4Ref = useRef();
-  let mountain5Ref = useRef();
-  let fog3Ref = useRef();
-  let mountain4Ref = useRef();
-  let mountain3Ref = useRef();
-  let fog2Ref = useRef();
-  let mountain2Ref = useRef();
-  let mountain1Ref = useRef();
-  let fog1Ref = useRef();
+  // let mountain9Ref = useRef();
+  // let mountain8Ref = useRef();
+  // let fog5Ref = useRef();
+  // let mountain7Ref = useRef();
+  // let mountain6Ref = useRef();
+  // let fog4Ref = useRef();
+  // let mountain5Ref = useRef();
+  // let fog3Ref = useRef();
+  // let mountain4Ref = useRef();
+  // let mountain3Ref = useRef();
+  // let fog2Ref = useRef();
+  // let mountain2Ref = useRef();
+  // let mountain1Ref = useRef();
+  // let fog1Ref = useRef();
+  
+  // let h1Ref = useRef();
+  // let h2Ref = useRef();
+  // let sunrayRef = useRef();
+  // let blackRef = useRef();
   let navbarRef = useRef();
   let shadowRef = useRef();
-  let h1Ref = useRef();
-  let h2Ref = useRef();
-  let sunrayRef = useRef();
-  let blackRef = useRef();
 
 
 
@@ -76,14 +77,8 @@ const ParallaxWebsite = () => {
       // gsap.from(blackRef, {opacity:0, duration: 3.5, ease: 'power3.out', delay: 2})
 
     }, styles.parallax);
-    console.log(backgroundRef.offsetHeight)
 
-    gsap.to('about', {
-      ScrollTrigger:{
-        snap: 'about'}
-  
 
-    })
 
     
     
@@ -115,7 +110,6 @@ const ParallaxWebsite = () => {
   return (
     <html lang="en">
       <head>
-        {/* ...head content */}
         <link rel="stylesheet" href={styles.style} />
       </head>
       <body className={styles.body}>

@@ -1,18 +1,11 @@
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from './canvas';
-import About from "./About";
-import Contact from "./Contact";
-import CanvasLoader from "./Loader";
+import About from "./about/About.jsx";
+import Contact from "./contact/Contact.jsx";
 import ParallaxWebsite from "./homepage/homepage.jsx"
 import Project from './project/index.js'
 
 export {
   About,
   Contact,
-  CanvasLoader,
-  EarthCanvas, 
-  BallCanvas, 
-  ComputersCanvas, 
-  StarsCanvas,
   ParallaxWebsite,
   Project,
 };

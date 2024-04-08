@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
-import {About, Contact, StarsCanvas, ParallaxWebsite, Project} from './components/index.js';
+import {About, Contact, ParallaxWebsite, Project} from './components/index.js';
 
-import Spline from '@splinetool/react-spline';
+// import Spline from '@splinetool/react-spline';
 
 const App = () => {
 
@@ -13,12 +13,6 @@ const App = () => {
     <div className="relative z-0 bg-primary">
     <Project/>
     <About />
-
-    {/* <Experience />
-    <Tech />
-    <Works />
-
-    <Feedbacks /> */}
     <Contact />
     </div>
 

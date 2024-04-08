@@ -2,10 +2,9 @@ import React from "react";
 import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
 
-import { styles } from "../styles";
-import { services } from "../constants";
-import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
+import { styles } from "../../styles";
+import { services } from "../../constants";
+import { fadeIn, textVariant, staggerContainer } from "../../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className='xs:w-[250px] w-full'>
@@ -37,17 +36,27 @@ const ServiceCard = ({ index, title, icon }) => (
 
 const About = () => {
   return (
-    <>
+    <motion.section
+      variants={staggerContainer()}
+      initial='hidden'
+      whileInView='show'
+      viewport={{ once: true, amount: 0.25 }}
+      className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+    >
+      <span className='hash-span' id='about'>
+        &nbsp;
+      </span>
+
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText} >Introduction</p>
-        <h2 className={styles.sectionHeadText} id='about'>Overview.</h2>
+        <p className={styles.sectionSubText}>Introduction</p>
+        <h2 className={styles.sectionHeadText}>Overview.</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm currently a student going in to my third year of computer science at McMaster University
+        I'm currently a student going into my third year of computer science at McMaster University.
         I'm a Full Stack Developer with a passion for creating exceptional digital experiences. With a 
         background in both front-end and back-end technologies, I specialize in crafting dynamic and 
         user-friendly web applications.
@@ -58,8 +67,8 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-    </>
+    </motion.section>
   );
 };
 
-export default SectionWrapper(About, "about");
+export default About;

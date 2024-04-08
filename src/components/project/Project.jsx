@@ -60,7 +60,6 @@ class Project extends Component {
         color: "pink-text-gradient",
       }
     ]}];
-    const tags = [['ye', 'ya', 'yo'], ['ho', 'ha' ,'hi'], ['ka', 'ki', 'ko']]
     return (
       <body className={projectStyles.body}>
         <div >
